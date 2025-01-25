@@ -43,7 +43,7 @@ export default function LandingPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Wedding Loans */}
             <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
-              <Link href="/wedding-loans">
+              <Link href="/wedding-Loans">
                 <h3 className="text-xl font-bold mb-2 text-blue-500">
                   Wedding Loans
                 </h3>
