@@ -1,100 +1,98 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      {/* Navigation Section */}
+      <header className="bg-green-600 text-white py-4">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Saylani Microfinance</h1>
+          <nav>
+            <Link href="/" className="px-4 py-2 hover:text-blue-200">
+              Home
+            </Link>
+            <Link href="/about" className="px-4 py-2 hover:text-blue-200">
+              About Us
+            </Link>
+          </nav>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-green-600 to-blue-500 text-white">
+        <div className="container mx-auto px-6 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Welcome to Saylani Microfinance
+          </h1>
+          <p className="text-lg md:text-xl mb-8">
+            Empowering communities through interest-free Qarze Hasana loans for
+            weddings, home construction, businesses, and education.
+          </p>
+          <button className="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition">
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      {/* Loan Categories Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12 text-green-600">
+            Loan Categories
+          </h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Wedding Loans */}
+            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <h3 className="text-xl font-bold mb-2 text-blue-500">
+                Wedding Loans
+              </h3>
+              <p className="text-gray-600">Max Loan: PKR 5 Lakh</p>
+              <p className="text-gray-600">Loan Period: 3 Years</p>
+            </button>
+            {/* Home Construction Loans */}
+            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <h3 className="text-xl font-bold mb-2 text-blue-500">
+                Home Construction Loans
+              </h3>
+              <p className="text-gray-600">Max Loan: PKR 10 Lakh</p>
+              <p className="text-gray-600">Loan Period: 5 Years</p>
+            </button>
+            {/* Business Startup Loans */}
+            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <h3 className="text-xl font-bold mb-2 text-blue-500">
+                Business Startup Loans
+              </h3>
+              <p className="text-gray-600">Max Loan: PKR 10 Lakh</p>
+              <p className="text-gray-600">Loan Period: 5 Years</p>
+            </button>
+            {/* Education Loans */}
+            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <h3 className="text-xl font-bold mb-2 text-blue-500">
+                Education Loans
+              </h3>
+              <p className="text-gray-600">Based on Requirement</p>
+              <p className="text-gray-600">Loan Period: 4 Years</p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="bg-green-600 text-white py-8">
+        <div className="container mx-auto px-6 text-center">
+          <p>&copy; 2025 Saylani Welfare. All rights reserved.</p>
+          <div className="flex justify-center mt-4 space-x-4">
+            <a href="#" className="hover:text-blue-200">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-blue-200">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:text-blue-200">
+              Contact Us
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
