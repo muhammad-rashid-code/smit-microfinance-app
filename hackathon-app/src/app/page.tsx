@@ -42,37 +42,45 @@ export default function LandingPage() {
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Wedding Loans */}
-            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
-              <h3 className="text-xl font-bold mb-2 text-blue-500">
-                Wedding Loans
-              </h3>
+            <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <Link href="/wedding-loans">
+                <h3 className="text-xl font-bold mb-2 text-blue-500">
+                  Wedding Loans
+                </h3>
+              </Link>
               <p className="text-gray-600">Max Loan: PKR 5 Lakh</p>
               <p className="text-gray-600">Loan Period: 3 Years</p>
-            </button>
+            </div>
             {/* Home Construction Loans */}
-            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
-              <h3 className="text-xl font-bold mb-2 text-blue-500">
-                Home Construction Loans
-              </h3>
+            <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <Link href="/home-cons-loan">
+                <h3 className="text-xl font-bold mb-2 text-blue-500">
+                  Home Construction Loans
+                </h3>
+              </Link>
               <p className="text-gray-600">Max Loan: PKR 10 Lakh</p>
               <p className="text-gray-600">Loan Period: 5 Years</p>
-            </button>
+            </div>
             {/* Business Startup Loans */}
-            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
-              <h3 className="text-xl font-bold mb-2 text-blue-500">
-                Business Startup Loans
-              </h3>
+            <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <Link href="/bussiness-loan">
+                <h3 className="text-xl font-bold mb-2 text-blue-500">
+                  Business Startup Loans
+                </h3>
+              </Link>
               <p className="text-gray-600">Max Loan: PKR 10 Lakh</p>
               <p className="text-gray-600">Loan Period: 5 Years</p>
-            </button>
+            </div>
             {/* Education Loans */}
-            <button className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
-              <h3 className="text-xl font-bold mb-2 text-blue-500">
-                Education Loans
-              </h3>
+            <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-green-100">
+              <Link href="/study-loan">
+                <h3 className="text-xl font-bold mb-2 text-blue-500">
+                  Education Loans
+                </h3>
+              </Link>
               <p className="text-gray-600">Based on Requirement</p>
               <p className="text-gray-600">Loan Period: 4 Years</p>
-            </button>
+            </div>
           </div>
         </div>
       </section>
