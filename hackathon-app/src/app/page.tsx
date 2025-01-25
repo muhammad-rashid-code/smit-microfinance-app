@@ -28,9 +28,9 @@ export default function LandingPage() {
             Empowering communities through interest-free Qarze Hasana loans for
             weddings, home construction, businesses, and education.
           </p>
-          <button className="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition">
+          <Link href={"/sign-in"} className="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition">
             Get Started
-          </button>
+          </Link>
         </div>
       </section>
 
