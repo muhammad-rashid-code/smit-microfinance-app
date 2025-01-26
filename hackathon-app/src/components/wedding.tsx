@@ -1,39 +1,46 @@
-'use client'; // Add this line at the top to indicate a client-side component
+"use client"; // Add this line to indicate a client-side component
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-// Loan categories and subcategories
-const loanCategories = [
+// Loan categories and subcategories type definitions
+interface LoanCategory {
+  category: string;
+  subcategories: string[];
+  maxLoan: number;
+  loanPeriod: number;
+}
+
+const loanCategories: LoanCategory[] = [
   {
-    category: 'Wedding Loans',
-    subcategories: ['Valima', 'Furniture', 'Valima Food', 'Jahez'],
+    category: "Wedding Loans",
+    subcategories: ["Valima", "Furniture", "Valima Food", "Jahez"],
     maxLoan: 500000,
     loanPeriod: 36, // 3 years in months
   },
 ];
 
-const WeddingLoanComponent = () => {
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('Valima');
+const WeddingLoanComponent: React.FC = () => {
+  // State variables with explicit types
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("Valima");
   const [initialDeposit, setInitialDeposit] = useState<number>(0);
   const [loanPeriod, setLoanPeriod] = useState<number>(12); // Default: 12 months
   const [loanAmount, setLoanAmount] = useState<number>(0);
   const [calculatedLoan, setCalculatedLoan] = useState<number>(0);
   const [showLoanDetails, setShowLoanDetails] = useState<boolean>(false);
 
-  // Handle calculation of the loan breakdown
+  // Loan calculation logic
   const calculateLoan = () => {
-    const totalLoan = loanCategories[0].maxLoan - initialDeposit;
+    const totalLoan = loanCategories[0].maxLoan - initialDeposit; // Calculate loan amount
     setLoanAmount(totalLoan);
-    const monthlyPayment = totalLoan / loanPeriod;
+    const monthlyPayment = totalLoan / loanPeriod; // Calculate monthly payment
     setCalculatedLoan(monthlyPayment);
     setShowLoanDetails(true);
   };
 
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form submission handler
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // You can handle form submission logic here, such as calling an API to submit the request
-    alert('Loan request submitted!');
+    alert("Loan request submitted!");
   };
 
   return (
@@ -70,7 +77,7 @@ const WeddingLoanComponent = () => {
             id="initialDeposit"
             name="initialDeposit"
             value={initialDeposit}
-            onChange={(e) => setInitialDeposit(parseInt(e.target.value))}
+            onChange={(e) => setInitialDeposit(Number(e.target.value))}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
             placeholder="Enter deposit amount"
           />
@@ -85,7 +92,7 @@ const WeddingLoanComponent = () => {
             id="loanPeriod"
             name="loanPeriod"
             value={loanPeriod}
-            onChange={(e) => setLoanPeriod(parseInt(e.target.value))}
+            onChange={(e) => setLoanPeriod(Number(e.target.value))}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             {[12, 24, 36].map((months) => (
